@@ -17,4 +17,8 @@ public class CustomerServiceImpl implements CustomerService{
     public Customer findCustomer(Long customerId) {
         return customerRepository.findById(customerId);
     }
+
+    public CustomerRepository getCustomerRepository() {
+        return customerRepository;
+    }
 }
