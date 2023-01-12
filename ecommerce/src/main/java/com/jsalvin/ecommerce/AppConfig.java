@@ -28,6 +28,7 @@ public class AppConfig {
     @Bean
     public OrderService orderService() {
         return new OrderServiceImpl(customerRepository(), discountPolicy());
+//        return null;
     }
 
     @Bean

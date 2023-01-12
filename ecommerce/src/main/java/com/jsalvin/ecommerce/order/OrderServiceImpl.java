@@ -1,16 +1,21 @@
 package com.jsalvin.ecommerce.order;
 
+import com.jsalvin.ecommerce.annotation.MainDiscountPolicy;
 import com.jsalvin.ecommerce.customer.Customer;
 import com.jsalvin.ecommerce.customer.CustomerRepository;
-import com.jsalvin.ecommerce.customer.MemoryCustomerRepository;
 import com.jsalvin.ecommerce.discount.DiscountPolicy;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
+//@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService{
 
     private final CustomerRepository customerRepository;
     private final DiscountPolicy discountPolicy;
 
-    public OrderServiceImpl(CustomerRepository customerRepository, DiscountPolicy discountPolicy) {
+    @Autowired
+    public OrderServiceImpl(CustomerRepository customerRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.customerRepository = customerRepository;
         this.discountPolicy = discountPolicy;
     }
