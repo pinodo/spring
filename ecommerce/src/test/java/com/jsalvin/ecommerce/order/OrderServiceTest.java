@@ -28,6 +28,6 @@ public class OrderServiceTest {
         customerService.join(customer);
 
         Order order = orderService.createOrder(customerId, "itemA", 100);
-        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1);
+        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(10);
     }
 }
